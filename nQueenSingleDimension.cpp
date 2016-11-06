@@ -2,34 +2,34 @@
 //
 
 #include "stdafx.h"
-#include <iostream>							//cin, cout
-#include <time.h>							// clock
-#include <stdlib.h>							// srand, rand
+#include <iostream>										//cin, cout
+#include <time.h>										// clock
+#include <stdlib.h>										// srand, rand
 using namespace std;
-int currentConflict = 0;						//Initialize #current conflicts to zero
-int restarts = 0;							//Counter to count #restarts
-int steps = 0;								//Counter to count hill climbing steps from Initial Random State
+int currentConflict = 0;									//Initialize #current conflicts to zero
+int restarts = 0;										//Counter to count #restarts
+int steps = 0;											//Counter to count hill climbing steps from Initial Random State
 int actualSteps = 0;
-int temp;								//Counter to calculate values
-int minConflictHeuristic;						//Counter for minimum heuristics
-int maxelements;							//Max Elements for interations
+int temp;											//Counter to calculate values
+int minConflictHeuristic;									//Counter for minimum heuristics
+int maxelements;										//Max Elements for interations
 class nQueen
 {
 public:
-	bool isSolution;						//Checks if reached state is a solution by Hill Climbing	
-	bool isSolved;							//Checks if reached state is a solution by Minimum Conflicts Algorithm
-	int n;								//n is the problem size
-	int tempConflicts;						//Accounts for Direct & Indirect Conflicts for a temporary state
-	int* state;							//Array to store location of Queen
-	int bestCol, bestRow;						//Stores value of best possible next state row and column values
-	int currentConflict, bestConflict;				//Stores value of currentConflicts & best Possible conflict
-	int currentRow, currentCol;					//Stores values of row and column for current state
-	int calcConflicts(int[]);					//Function to calculate conflicts for a state
-	void start();							//Function to start processing of nQueen Problem
-	void displayState();						//Function to display a state on screen
-	void randomState();						//Function to generate a random state
-	void hillClimbing();						//Calculates heuristic value for every possible state	
-	void minConflicts();						//Function to evaluate minimum conflicts
+	bool isSolution;									//Checks if reached state is a solution by Hill Climbing	
+	bool isSolved;										//Checks if reached state is a solution by Minimum Conflicts Algorithm
+	int n;											//n is the problem size
+	int tempConflicts;									//Accounts for Direct & Indirect Conflicts for a temporary state
+	int* state;										//Array to store location of Queen
+	int bestCol, bestRow;									//Stores value of best possible next state row and column values
+	int currentConflict, bestConflict;							//Stores value of currentConflicts & best Possible conflict
+	int currentRow, currentCol;								//Stores values of row and column for current state
+	int calcConflicts(int[]);								//Function to calculate conflicts for a state
+	void start();										//Function to start processing of nQueen Problem
+	void displayState();									//Function to display a state on screen
+	void randomState();									//Function to generate a random state
+	void hillClimbing();									//Calculates heuristic value for every possible state	
+	void minConflicts();									//Function to evaluate minimum conflicts
 };
 void nQueen::start()
 {
@@ -45,12 +45,12 @@ void nQueen::start()
 		exit(0);
 	}
 	std::cout << "Processing.............................................." << endl;
-	state = new int[n];								//Creating an array of size n
-	isSolution = false;								//Indicates solution not found (Initial Value)
+	state = new int[n];									//Creating an array of size n
+	isSolution = false;									//Indicates solution not found (Initial Value)
 	isSolved = false;
-	hillClimbing();									//Start Hill Climbing
+	hillClimbing();										//Start Hill Climbing
 	restarts = 0;
-	minConflicts();									//Minimum Conflicts Algorithm
+	minConflicts();										//Minimum Conflicts Algorithm
 }
 void nQueen::randomState()
 {
