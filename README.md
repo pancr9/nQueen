@@ -1,0 +1,2 @@
+# nQueen
+nQueen problem solver.
