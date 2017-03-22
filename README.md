@@ -6,7 +6,7 @@ Solving N-queens
 
 >The N-queens problem is ideally suited to constraint programming. This is a short C++ program that solves N-queens for any value of N.
 
-It uses two approaches
+It uses two approaches along with A * algorithm.
 1. Minimum Conflicts
 2. Hii Climbing
 
